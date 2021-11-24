@@ -17,11 +17,12 @@ def is_hug_time(user):
         
     else:
         res = {'is_hug_time': 'NO'}
+        
     app.logger.info('is-hug-time returning response=' + str(res))
     return res
     
 @app.route('/api/authenticate/new-user/<user>') 
-def register_user(username):
+def register_user(user):
     if user in friends_graph: # TODO connect with mongoDB
         res = {'success': False}
     else:
@@ -38,10 +39,15 @@ def add_friend_to_user(user, friend):
 
 @app.route('/api/get-all-friends/<user>')
 def get_all_friends(user):
-    if user in friends_graph:
-        list_of_friends = friends_graph[user]
-        return list_of_friends[0] #TODO : return all the list and not just the 0 place
-    else: return {"{user} not in friends_graph : {friends_graph}"}
+    
+    if user not in friends_graph:
+        res = {'friends': []}
+    else:
+        res = {'friends': ','.join(friends_graph[user])}
+        
+    app.logger.info('get-all-friends returning response=' + str(res))
+    
+    return res
      
     
 
