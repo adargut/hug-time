@@ -1,12 +1,13 @@
 import React from 'react';
-import styles from './WelcomeForm.module.css'
+import styles from '../css/WelcomeForm.module.css'
 
 
 class WelcomeForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      inputValue: ''
+      inputValue: '',
+      hidden: false
     };
   }
 

@@ -65,8 +65,7 @@ class HugTimeApp extends React.Component {
       <div>
         <h3>HugTime</h3>
         <form onSubmit={this.handleChange}>
-        <WelcomeForm loginHandler={this.loginHandler}/>
-        {this.state.loggedIn ? <FriendsList username={this.state.username} friends={this.state.friends}></FriendsList> : null}
+        {this.state.loggedIn ? <FriendsList username={this.state.username} friends={this.state.friends}></FriendsList> : <WelcomeForm loginHandler={this.loginHandler}/>}
         <label>
           Is it hug time? {this.state.isHugTime == 'YES' ? 'YES WITH' : 'NO'} {this.state.toHug}
         </label>
