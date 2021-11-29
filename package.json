@@ -1,20 +1,24 @@
 {
   "name": "hug-time",
-  "proxy": "http://localhost:5000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-pretty-input": "^1.0.13",
     "react-scripts": "^4.0.3",
+    "simple-login-form": "^1.1.6",
     "web-vitals": "^1.1.2"
   },
+  "type": "module",
   "scripts": {
     "start": "react-scripts start",
-    "start-api": "cd api && venv/bin/flask run --no-debugger",
+    "start-api": "cd api && ./venv/Scripts/activate --no-debugger",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,5 +41,9 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.0",
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "create-react-component-folder": "^0.3.7"
+  }
 }
