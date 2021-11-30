@@ -11,7 +11,7 @@ CORS(app)
 def is_hug_time(user):
     res = {'is_hug_time': 'NO'}
 
-    if user in friends_graph and friends_graph[user] and randint(0, 4) == 1:
+    if user in friends_graph and friends_graph[user] and randint(0, 1) == 1:
         res = {
             'is_hug_time': 'YES',
             'friend_to_hug': choice(friends_graph[user])

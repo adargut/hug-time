@@ -1,6 +1,7 @@
 import React from 'react';
+import styles from '../css/HuggedFriend.module.css'
 
-class Friend extends React.Component {
+class HuggedFriend extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +16,7 @@ class Friend extends React.Component {
   render() {
     return (
         <div>
-            {this.state.friendName ? <li>{ this.state.friendName }</li> : <div></div>}
+            {this.state.friendName ? <li className={styles.huggedLi}>{ this.state.friendName }</li> : <div></div>}
         </div>
     )
   }
@@ -27,4 +28,4 @@ class Friend extends React.Component {
   }
 }
 
-export default Friend;
+export default HuggedFriend;

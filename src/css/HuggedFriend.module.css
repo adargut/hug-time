@@ -1,0 +1,11 @@
+.huggedLi::before {
+  content: "🤗";
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+
+.huggedLi::after {
+  content: "🤗";
+  display: inline-block;
+  margin-right: 0.2rem;
+}
